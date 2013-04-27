@@ -1,11 +1,16 @@
 #!/usr/bin/env node
+// source ~/.bash_profile
+// Jalal.Hejazi
+
 ;(function() {
 var fsio = require('fs');
 var path = require('path');
 var static = require('node-static');
 
 function showUsageAndExit() {
-    console.log("usage: simple-http [-p <port-number>] [path]\n");
+    console.log("   usage: server [-p <port-number>] [path]\n");
+    console.log("   usage: server [-port <port-number>] [path]\n");
+    console.log("   usage: server \n");
     console.log("  -p <port-number>\tThe port number to use");
     console.log("  [path]\t\tPath to serve. Defaults to current directory\n");
     process.exit();
@@ -22,7 +27,10 @@ if (args.length > 0 && args.length < 4) {
             case "-p":
                 port = parseInt(args[++i]);
                 break;
-			case "--help":
+            case "-port":
+                port = parseInt(args[++i]);
+                break;
+			case "-help":
 				showUsageAndExit();
 				break;
             default:
@@ -55,6 +63,8 @@ require('http').createServer(function(request, response) {
     });
 }).listen(port);
 
-console.log("PID " + process.pid + " started on port " + port.toString() + " in '" + dir + "'");
+console.info("\n\t Jalal.Hejazi \n\t Node Sever running http://localhost:" + port.toString() + "/\n\t in '" + dir + "'");
+console.info("\n\t usage: $ server -p %s ~/Sites" , port );
+console.info("\n\t usage: npm link  --> to put server in your path ");
 
 })();
