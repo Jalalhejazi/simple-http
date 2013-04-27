@@ -21,4 +21,19 @@ To start a server on port 8081 and serves content in ~/Sites:
 
 `$> server -p 8081 ~/Sites`
 
+##FileSystemBrowser##
+
+To run a simple http server in Node.js which allows you to browse and download any server's file directly from your browser: 
+
+`$> node HttpFileSystem.js  `
+HttpFileSystem Server running at http://localhost:1111/
+
+
+Now I can browse my FileSystem from browser.
+
+
+
+
+
+
 

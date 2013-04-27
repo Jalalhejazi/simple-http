@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // source ~/.bash_profile
-// Jalal.Hejazi
+// Jalal.Hejazi
 
 ;(function() {
 var fsio = require('fs');
