@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 // source ~/.bash_profile
+// using: Terminal Zsh
 // Jalal.Hejazi
 
 ;(function() {
@@ -25,12 +26,11 @@ if (args.length > 0 && args.length < 4) {
         try {
             switch (args[i]) {
             case "-p":
-                port = parseInt(args[++i]);
-                break;
             case "-port":
                 port = parseInt(args[++i]);
                 break;
 			case "-help":
+            case "--help":
 				showUsageAndExit();
 				break;
             default:
